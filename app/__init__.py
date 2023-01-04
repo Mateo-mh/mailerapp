@@ -14,4 +14,7 @@ def create_app():
         DATABASE=OS.environ.get('FLASK_DATABASE')
     )
 
+    from . import db
+    db.init_app(app)
+
     return app
