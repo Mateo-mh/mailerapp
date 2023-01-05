@@ -10,7 +10,7 @@ def get_db():
         g.db = mysql.connector.connect(
             host=current_app.config['DATABASE_HOST'],
             user=current_app.config['DATABASE_USER'],
-            passwd=current_app.config['DATABASE_PASSWORD'],
+            password=current_app.config['DATABASE_PASSWORD'],
             database=current_app.config['DATABASE']
         )
         g.c = g.db.cursor(dictionary=True)
@@ -35,6 +35,6 @@ def init_db_command():
     init_db()
     click.echo('Base de datos inicializada')
 
-def init_db(app):
+def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
