@@ -15,10 +15,11 @@
     Mail<strong>er</strong>
 </nav>
 <section class="content">
-    <div class="'top-bar">
+    <div class="top-bar">
         <form method="get">
             <input name="search" type="text" placeholder="Quieres buscar algo?">
         </form>
+        {% block action %}{% endblock %}
     </div>
     <header>    
         {% block header %}{% endblock %}
